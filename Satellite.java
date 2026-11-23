@@ -20,27 +20,37 @@ public class Satellite implements ISatellite, Comparable<Satellite>{
         this.albedo = albedo; 
     }
 
+    @Override
     public String getPlanetName(){// Associated planet of the moon
         return planetName;
     }
+
+    @Override
     public String getName(){ // Name of the moon
         return name;
     }
+
+    @Override
     public double getGM(){ // this is product of gravity times magnitude
     return GM;
     }
+
+    @Override
     public double getRadius(){
         return radius;
     }
 
+    @Override
     public double getDensity(){
         return density;
     }
 
+    @Override
     public double getMagnitude(){
         return magnitude;
     }
 
+    @Override
     public double getAlbedo(){
         return albedo;
     }
@@ -52,4 +62,14 @@ public class Satellite implements ISatellite, Comparable<Satellite>{
         }
         return this.planetName.compareTo(other.planetName);
     }
+    
+    @Override
+    public String toString(){
+        ISatellite is = this;
+
+        return is.getPlanetName() + "," + is.getName() + "," + is.getGM() + "," 
+        + is.getRadius() + "," + is.getDensity() + ","
+        + is.getMagnitude() + "," + is.getAlbedo(); 
+    }
+
 }
